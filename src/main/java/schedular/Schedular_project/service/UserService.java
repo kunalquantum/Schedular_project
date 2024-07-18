@@ -40,5 +40,18 @@ public class UserService {
 
     }
 
+    @Scheduled(cron = "0/3 * * * * *")
+    public void delete(){
+        List<User> user_list=dao.findAll();
+        System.out.println("delete service called "+new Date().toString());
+        user_list.removeAll(user_list);
+
+    }
+
+
+
+
+
+
 
 }
