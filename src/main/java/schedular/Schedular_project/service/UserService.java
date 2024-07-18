@@ -48,6 +48,24 @@ public class UserService {
 
     }
 
+    @Scheduled(cron = "0/5 * * * * *")
+    public void check(){
+        List<User> list=dao.findAll();
+        System.out.println("checking ....");
+        if(list!=null)
+            System.out.println("the list is not empty");
+        else
+            System.out.println("the list is empty...");
+
+
+    }
+
+
+
+
+
+
+
 
 
 
